@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <tuple>
 #include <chrono>
 #include <unordered_map>
 #include <vector>
@@ -16,20 +18,26 @@
 
 /*
  * Feetchury
- * Quality of life: auto, foreach, init lists, delegating constructors, default/delete, final, override, nullptr, enum class
- * lambdy, partial application
- * r-value/move
- * RAII pointers (deletable)
+ * Quality of life: auto, decltype, foreach, init lists, delegating constructors, default/delete, final, override, nullptr, enum class, variadic templates, varargs, tuples
+ * lambdy, capture, std::function, std::bind, partial application
+ * r-value/move, emplace_back, rule of three (five)
+ * RAII pointers
  * stdlib: thread, atomic, sync primitives, async/future, regex, random numbers
  * vectorization
- * stream
+ * Proof of concept: stream
  * AddressSanitizer
  * ~
  * */
 
+auto recurse(int x) -> int
+{
+    if (x <= 2) return recurse(x - 1);
+    return 0;
+}
+
 int main(int argc, char** argv)
 {
+    std::cout << recurse(5) << std::endl;
 
-
-	return 0;
+    return 0;
 }

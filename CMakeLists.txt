@@ -7,7 +7,6 @@ add_executable(pp
     main.cpp
     stream/stream.h
     vectorization/vectorization.cpp
-    therealdeal.cpp
 )
 
 include_directories(./vectorization)
